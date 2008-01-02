@@ -8,6 +8,7 @@ URL:		http://nixgeneration.com/~jaime/netdiscover/
 Source0:	http://nixgeneration.com/~jaime/netdiscover/releases/%{name}-%{version}-beta6.tar.bz2
 BuildRequires:	libpcap-devel
 BuildRequires:	libnet1.1.2-devel
+BuildRoot:	%{_tmppath}/%{name}-%{version}-root
 
 %description
 Netdiscover is a network address discovering tool, developed
