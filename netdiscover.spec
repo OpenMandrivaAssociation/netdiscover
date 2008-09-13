@@ -1,33 +1,37 @@
 Summary:	A network address discovering tool
 Name:		netdiscover
 Version:	0.3
-Release:	%mkrel 0.beta6.1
-License:	GPL
+Release:	%mkrel 0.beta7.1
+License:	GPLv3
 Group:		Networking/Other
 URL:		http://nixgeneration.com/~jaime/netdiscover/
-Source0:	http://nixgeneration.com/~jaime/netdiscover/releases/%{name}-%{version}-beta6.tar.bz2
+# http://www.pc-workshop.da.ru/cvs/netdiscover.tar.gz?view=tar
+Source0:	%{name}-%{version}-beta7.tar.gz
 BuildRequires:	libpcap-devel
 BuildRequires:	libnet1.1.2-devel
-BuildRoot:	%{_tmppath}/%{name}-%{version}-root
+BuildRequires:	wget
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
-Netdiscover is a network address discovering tool, developed
-mainly for those wireless networks without dhcp server, but it
-also works on hub/switched networks. Its based on arp requests, it
-will send arp requests and sniff for replies.
+Netdiscover is a network address discovering tool, developed mainly for those
+wireless networks without dhcp server, but it also works on hub/switched
+networks. Its based on arp requests, it will send arp requests and sniff for
+replies.
 
 %prep
 
-%setup -q -n %{name}-%{version}-beta6
+%setup -q -n %{name}-%{version}-beta7
 
 %build
+LC_ALL=C sh update-oui-database.sh
+sh autogen.sh
 
 %configure2_5x
 
 %make
 
 %install
-[ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
+rm -rf %{buildroot}
 
 %makeinstall_std
 
@@ -35,7 +39,7 @@ will send arp requests and sniff for replies.
 rm -rf %{buildroot}%{_prefix}/doc
 
 %clean
-[ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
+rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
