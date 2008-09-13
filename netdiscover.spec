@@ -10,6 +10,7 @@ Source0:	%{name}-%{version}-beta7.tar.gz
 BuildRequires:	libpcap-devel
 BuildRequires:	libnet1.1.2-devel
 BuildRequires:	wget
+BuildRequires:	libtool
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
