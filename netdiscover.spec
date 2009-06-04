@@ -1,14 +1,14 @@
 Summary:	A network address discovering tool
 Name:		netdiscover
 Version:	0.3
-Release:	%mkrel 0.beta7.2
+Release:	%mkrel 0.beta7.3
 License:	GPLv3
 Group:		Networking/Other
 URL:		http://nixgeneration.com/~jaime/netdiscover/
 # http://www.pc-workshop.da.ru/cvs/netdiscover.tar.gz?view=tar
 Source0:	%{name}-%{version}-beta7.tar.gz
 BuildRequires:	libpcap-devel
-BuildRequires:	libnet1.1.2-devel
+BuildRequires:	net-devel >= 1.1.3
 BuildRequires:	wget
 BuildRequires:	libtool
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
