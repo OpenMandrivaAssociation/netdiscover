@@ -1,7 +1,7 @@
 Summary:	A network address discovering tool
 Name:		netdiscover
 Version:	0.3
-Release:	%mkrel 0.beta7.3
+Release:	%mkrel 0.beta7.4
 License:	GPLv3
 Group:		Networking/Other
 URL:		http://nixgeneration.com/~jaime/netdiscover/
