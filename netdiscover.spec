@@ -4,7 +4,7 @@ Version:	0.3
 Release:	0.beta7.5
 License:	GPLv3+
 Group:		Networking/Other
-Url:		http://nixgeneration.com/~jaime/netdiscover/
+Url:		https://nixgeneration.com/~jaime/netdiscover/
 # http://www.pc-workshop.da.ru/cvs/netdiscover.tar.gz?view=tar
 Source0:	%{name}-%{version}-beta7.tar.gz
 BuildRequires:	libtool
